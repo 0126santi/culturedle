@@ -1,0 +1,16 @@
+{
+  "name": "worldle-cultura-general",
+  "version": "1.0.0",
+  "description": "Juego tipo Wordle con una pregunta diaria de cultura general mundial.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7",
+    "sqlite3": "^5.1.6"
+  }
+}

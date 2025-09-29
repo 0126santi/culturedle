@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 32px 24px;
+    text-align: center;
+}
+h1 {
+    color: #222;
+}
+#question {
+    font-size: 1.2em;
+    margin-bottom: 18px;
+}
+#attempts {
+    margin-bottom: 12px;
+}
+#guess-form input {
+    padding: 8px;
+    font-size: 1em;
+    width: 60%;
+    margin-right: 8px;
+}
+#guess-form button {
+    padding: 8px 16px;
+    font-size: 1em;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#guess-form button:disabled {
+    background: #aaa;
+}
+.letter {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    margin: 3px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 6px;
+    background: #e0e0e0;
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+}
+.letter.input {
+    background: #fffde7;
+    border: 1.5px solid #bdbdbd;
+    color: #616161;
+}
+.letter.green {
+    background: #4caf50;
+    color: #fff;
+}
+.letter.yellow {
+    background: #ffeb3b;
+    color: #222;
+}
+.letter.gray {
+    background: #bdbdbd;
+    color: #fff;
+}
+#result {
+    margin-top: 18px;
+    min-height: 40px;
+}
+#answer-reveal {
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
