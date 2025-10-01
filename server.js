@@ -1,4 +1,6 @@
-// Endpoint temporal para reiniciar la pregunta de hoy
+// ...existing code...
+
+// Endpoint temporal para reiniciar la pregunta de hoy (debe ir después de la inicialización de 'app')
 app.post('/api/admin/reset-today', (req, res) => {
     const today = getToday();
     db.run('DELETE FROM daily_question WHERE date = ?', [today], function(err) {
