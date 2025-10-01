@@ -68,7 +68,11 @@ const guessInput = document.getElementById('guess-input');
 const guessForm = document.getElementById('guess-form');
 
 // Mostrar la palabra que el usuario escribe en los cuadros (como en Wordle)
+
+// Prevenir espacios en blanco en el input
 guessInput.addEventListener('input', () => {
+    // Eliminar todos los espacios en blanco automáticamente
+    guessInput.value = guessInput.value.replace(/\s+/g, '');
     const val = guessInput.value.toLowerCase();
     const row = [];
     for (let i = 0; i < answerLength; i++) {
@@ -78,6 +82,12 @@ guessInput.addEventListener('input', () => {
 });
 
 guessForm.addEventListener('submit', async (e) => {
+    // Prevenir envío si hay espacios en blanco
+    if (/\s/.test(guessInput.value)) {
+        alert('No se permiten espacios en blanco en la respuesta.');
+        guessInput.value = guessInput.value.replace(/\s+/g, '');
+        return;
+    }
     e.preventDefault();
     const guess = guessInput.value.trim().toLowerCase();
     if (guess.length !== answerLength) {
