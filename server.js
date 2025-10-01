@@ -35,34 +35,6 @@ app.post('/api/admin/reset-today', (req, res) => {
         res.json({ ok: true });
     });
 });
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
-const { getQuestionOfTheDay } = require('./ai-generator');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static(path.join(__dirname)));
-
-// DB setup
-const db = new sqlite3.Database('./worldle.db');
-db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS daily_question (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date TEXT UNIQUE,
-        question TEXT,
-        answer TEXT
-    )`);
-});
-
-// Helper: get today string
-function getToday() {
-    return new Date().toISOString().slice(0, 10);
-}
 
 // API: Get today's question
 app.get('/api/question', async (req, res) => {
