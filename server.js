@@ -1,3 +1,11 @@
+// Endpoint temporal para reiniciar la pregunta de hoy
+app.post('/api/admin/reset-today', (req, res) => {
+    const today = getToday();
+    db.run('DELETE FROM daily_question WHERE date = ?', [today], function(err) {
+        if (err) return res.status(500).json({ error: 'DB error' });
+        res.json({ ok: true });
+    });
+});
 const express = require('express');
 const cors = require('cors');
 const path = require('path');

@@ -3,8 +3,8 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const genAI = new GoogleGenerativeAI("AIzaSyDrm2lmbM9vGmGR4iISSY9D-WqzVxi-8bk");
 
-// Prompt ajustado para mayor dificultad y sin acentos en la respuesta
-const PROMPT = `Genera una pregunta de cultura general mundial difícil (nivel experto, no trivial) y su respuesta, la respuesta debe ser una sola palabra común (sin nombres propios ni tecnicismos), SIN ACENTOS ni caracteres especiales, solo letras minúsculas y números, formato JSON: {"question": "...", "answer": "..."}`;
+// Prompt ajustado para mayor dificultad, sin acentos y preguntas breves
+const PROMPT = `Genera una pregunta de cultura general mundial difícil (nivel experto, no trivial), pero breve y concisa (máximo 20 palabras), y su respuesta. La respuesta debe ser una sola palabra común (sin nombres propios ni tecnicismos), SIN ACENTOS ni caracteres especiales, solo letras minúsculas y números. Formato JSON: {"question": "...", "answer": "..."}`;
 
 // Función para obtener un seed único por día
 function getTodaySeed() {
