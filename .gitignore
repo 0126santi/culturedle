@@ -1,0 +1,24 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.*
+
+# SQLite DB
+worldle.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local backups
+__backup/
+ai-generator.clean.js
+borrar_pregunta_hoy.js
+*.bak
+
+# Build
+dist/
